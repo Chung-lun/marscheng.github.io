@@ -1,0 +1,12 @@
+[
+
+	{
+		"title"    : "CVE-2018-11492",
+		"category" : "",
+		"desc"     : " ASUS HG100 exists DoS vulnerability Description:ASUS HG100 devices allow denial of service via an IPv4 packet flood.This vulnerability was discovered by National Center for Cyber Security Technolo...",
+		"tags"     : "CVE",
+		"url"      : "/marscheng/2018/CVE-2018-11492/",
+		"date"     : "2018-07-25 00:00:00 +0800"
+	} 
+
+]
