@@ -1,22 +1,29 @@
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-  {% seo title=false %}
-  {% if site.google_plus %}<link rel="author" href="https://plus.google.com/+{{site.google_plus}}"/>{% endif %}
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="stylesheet" href="{{ "/assets/css/nangka.css" | prepend: site.baseurl }}">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ site.description }}">
+    <meta name="keyword"  content="{{ site.keyword }}">
+    <link rel="shortcut icon" href="{{ site.baseurl }}/img/favicon.ico">
 
-  {% if site.google_analytics %}
-  <script>
-  (function(s,u,b,e,k,t,i){s['GoogleAnalyticsObject']=k;s[k]=s[k]||function(){
-    (s[k].q=s[k].q||[]).push(arguments)},s[k].l=1*new Date();t=u.createElement(b),
-    i=u.getElementsByTagName(b)[0];t.async=1;t.src=e;i.parentNode.insertBefore(t,i)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', '{{ site.google_analytics }}', 'auto');
-  ga('send', 'pageview');
-  </script>
-  {% endif %}
+    <title>{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}</title>
 
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | prepend: site.baseurl }}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ "/css/hux-blog.min.css" | prepend: site.baseurl }}">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="{{ "/css/syntax.css" | prepend: site.baseurl }}">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <script></script>
 </head>
