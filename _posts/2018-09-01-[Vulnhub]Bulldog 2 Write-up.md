@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: keynote
 title:  "[Vulnhub]Bulldog 2 Write-up"
 subtitle: ""
 author: Mars Cheng
@@ -20,6 +20,7 @@ mistake or suggestion, please let we konw. Thanks.
 ### Information gathering
 As usual, we firstly use Nmap to scan the machine which tool can discover machine port status, service, and version. 
 * This machine only open port 80, and provide web service based on niginx 1.14.0.    
+
 
 ```console
 [15:17:52] root:bulldog2/ # nmap -A 192.168.0.17 
