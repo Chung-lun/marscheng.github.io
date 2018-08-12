@@ -27,4 +27,9 @@ Mars Cheng received the B.S. and M.S. in Library and Information Science, Fu Jen
 * CEH, Certified Ethical Hacker
 * BS 10012:2017 Personal Information Management System (PIMS) Lead Auditor
 
+#### **Contact Me**
+E-mail: chung.lun.cheng@gmail.com
+Facebook:[Mars Cheng](https://www.facebook.com/chung.lun.93)
+Linkedin: [Mars Cheng](https://www.linkedin.com/in/chungluncheng/)
 
+ 
